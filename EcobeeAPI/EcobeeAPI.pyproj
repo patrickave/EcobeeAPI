@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>9969e0ab-65b6-4e2f-8dbe-1760d47150c8</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>EcobeeAPI.py</StartupFile>
+    <StartupFile>ecobeeapi.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -21,7 +21,17 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="EcobeeAPI.py" />
+    <Compile Include="database.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ecobeeapi.py" />
+    <Compile Include="module.py" />
+    <Compile Include="module1.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config.json" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
