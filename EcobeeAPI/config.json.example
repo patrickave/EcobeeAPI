@@ -1,0 +1,13 @@
+{
+    "ecobee_api": {
+        "api_key": "key here",
+        "access_token": "key here",
+        "refresh_token": "key here",
+        "auth_code": "key here"
+    },
+    "database": {
+      "host": "localhost",
+      "username": "user",
+      "password": "secret"
+    }
+}
