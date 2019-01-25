@@ -4,18 +4,23 @@ import datetime
 from module import *
 import logging
 from database import *
-logging.basicConfig(level=logging.DEBUG)
-with open("config.json") as json_data_file:
-    data = json.load(json_data_file)
-now = datetime.datetime.now()
-db = Database('10.0.0.7', dbname='copper', username='copper_user', password='copper')
-token = data['ecobee_api']['access_token']
-request = get_thermostat(access_token=token)
 
+config = load_config('config.json')
+now = datetime.datetime.now()
+host = config['database']['host']
+user = config['database']['username']
+pwd = config['database']['password']
+dbn = 'copper'
+db = Database(host, dbn, user, pwd)
+token = config['ecobee_api']['access_token']
+request = get_thermostat(access_token=token)
+#repeat pulling json
 
 if request.status_code != 200:
-   refresh_token()
    logging.debug('Access Token Expired: Requesting New Tokens')
+   refresh_token()
+   config = load_config('config.json')
+   token = config['ecobee_api']['access_token']
    request = get_thermostat(access_token=token)
 
 if request.status_code == 200:
