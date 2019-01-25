@@ -5,6 +5,11 @@ import logging
 import logging
 logging.basicConfig(level=logging.DEBUG)
 
+def load_config(config_file):
+    with open(config_file) as json_data_file:
+        data = json.load(json_data_file)
+    return data
+
 def get_thermostat(access_token):
     access_token = access_token
     url = 'https://api.ecobee.com/1/thermostat'
