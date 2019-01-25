@@ -10,9 +10,9 @@ class Database:
 
         self.mydb = mysql.connector.connect(
             host=host,
+            database=dbname,
             user=username,
-            passwd=password,
-            database=dbname
+            passwd=password
             )
 
     def add_temperature(self, table, date_added, sensor, indoor_temp, outside_temp):
