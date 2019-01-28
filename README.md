@@ -4,5 +4,5 @@
   - After it pulls the info, it stores it in a MySQL Database
 
 # Future Plans:
-  - Maybe create a Django website and chart out the data using nodeJS
+  - Maybe create a Django website and chart out the data using nodeJS or reactJS/reactifydjango
 
